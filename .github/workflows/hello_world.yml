@@ -1,0 +1,21 @@
+# Name of the workflow
+name: Hello World
+
+# Runs under the following condition
+on:
+  schedule:
+  # runs at 11 PM PST (6 AM UTC)
+    - cron: '0 6 * * *'
+
+# Runs the following jobs
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello World!
+  say_bye:
+    needs: say_hello
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Good Bye World!
+  
