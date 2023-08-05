@@ -4,8 +4,8 @@ name: Hello World
 # Runs under the following condition
 on:
   schedule:
-  # runs every 5 mins
-    - cron: '*/5 * * * *'
+  # Runs on 6:30 AM August 5th Saturday 
+    - cron: '30 6 5 8 6'
 
 # Runs the following jobs
 jobs:
