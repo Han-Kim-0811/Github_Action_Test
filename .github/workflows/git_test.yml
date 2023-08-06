@@ -13,6 +13,10 @@ jobs:
   git_list:
     runs-on: ubuntu-latest
     steps:
+      - uses: action/checkout@v3
+        with:
+          sparse-checkout: |
+            README.md
       - run: | 
           echo "Updated README through Github Action" >> README.md
           git add README.md
