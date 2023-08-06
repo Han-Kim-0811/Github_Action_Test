@@ -1,0 +1,13 @@
+# Name of the workflow
+name: Git Test
+
+# Runs under the following condition
+# Workflow can be triggered manually
+on: workflow_dispatch
+
+# Runs the following jobs
+jobs:
+  git_list:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git config --list
