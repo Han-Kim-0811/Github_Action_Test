@@ -5,9 +5,16 @@ name: Git Test
 # Workflow can be triggered manually
 on: workflow_dispatch
 
+permissions: 
+  contents: write
+
 # Runs the following jobs
 jobs:
   git_list:
     runs-on: ubuntu-latest
     steps:
-      - run: git config --list
+      - run: | 
+          echo "Updated README through Github Action" >> README.md
+          git add README.md
+          git commit -m "Updated README through Github Action"
+          git push
