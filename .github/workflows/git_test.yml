@@ -20,6 +20,8 @@ jobs:
             README.md
       - run: | 
           echo "Updated README through Github Action" >> README.md
+          git config --global user.email "han.dhk.kim@gmail.com"
+          git config --global user.name "Han-Kim-0811"
           git add README.md
           git commit -m "Updated README through Github Action"
           git push
