@@ -1,1 +1,1 @@
-- [x] Checkbox not checked
+Updated README through Github Action
