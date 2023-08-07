@@ -3,7 +3,7 @@ name: Git Test
 
 # Runs under the following condition
 # Workflow can be triggered manually
-on: workflow_dispatch
+on: push
 
 permissions: 
   contents: write
