@@ -1,1 +1,1 @@
-- [ ] Checkbox not checked
+- [x] Checkbox not checked
