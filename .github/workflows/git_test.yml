@@ -18,10 +18,19 @@ jobs:
           # Checkout a single file
           sparse-checkout: |
             README.md
-      - run: | 
-          echo "Updated README through Github Action" > README.md
-          git config --global user.email "han.dhk.kim@gmail.com"
-          git config --global user.name "Han-Kim-0811"
-          git add README.md
-          git commit -m "Updated README through Github Action"
-          git push
+      - env:
+          NUM: 1
+        run: | 
+          line=$(sed "${NUM}!d" README.md)
+          if [[ "$line" == *"[x]"* ]]
+          then
+            echo "Updated README through Github Action" > README.md
+            git config --global user.email "han.dhk.kim@gmail.com"
+            git config --global user.name "Han-Kim-0811"
+            git add README.md
+            git commit -m "Updated README through Github Action"
+            git push
+          else
+            echo "Checkbox not checked!"
+          fi
+          
